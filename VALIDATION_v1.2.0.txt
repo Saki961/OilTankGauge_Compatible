@@ -1,0 +1,20 @@
+OilTankGauge v1.2.0 验证记录
+
+已完成：
+1. Kotlin 计算核心编译检查通过：Models + CapacityCalculator + CrudeOilCalculator + CapacityAuditService。
+2. 原有 CrudeOilCalculatorSmokeTest 通过：density-unit-equivalence=PASS。
+3. 原有 CalculatorSmokeTest 通过：calculator=PASS result=285.867。
+4. 新增 CapacityAuditService 合成数据测试通过：capacity-audit=PASS，能够识别明显异常容积跳变。
+5. 修改后的 3 个 Activity 使用 kotlinc 做语法扫描，未发现 expecting / unexpected tokens / unclosed 等 Kotlin 语法错误。
+
+完整 Android assembleDebug 状态：
+- 已执行 ./gradlew :app:assembleDebug。
+- 当前生成环境没有预装 Gradle 8.2.1 / Android SDK；Gradle wrapper 尝试从 mirrors.aliyun.com 下载发行包时因执行环境无外网而失败。
+- 因此本记录不宣称“完整 APK 已编译通过”。请在已配置 Android SDK 的 Android Studio 中 Sync 后执行 Build > Make Project / assembleDebug。
+
+建议设备测试重点：
+- 温度全部留空按 0 计算。
+- 下尺 + 浸油自动空高与人工空高两种方式。
+- 结果页“返回修改”恢复所有字段。
+- 船舶详情的“舱容数据自查”。
+- “总量快速复核”与综合计算无钢膨质量结果对照。

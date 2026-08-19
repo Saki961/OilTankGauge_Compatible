@@ -1,0 +1,19 @@
+=== Parser smoke test ===
+vessels=4
+新平江1014: 1 tanks
+  左一: 78 points 19..789 mm
+分节油63037: 4 tanks
+  货舱一: 50 points 16..506 mm
+  货舱三: 50 points 509..999 mm
+  货舱八: 50 points 518..1008 mm
+  货舱二: 50 points 8..498 mm
+分节油63020: 1 tanks
+  货舱二: 41 points 514..924 mm
+皖江17: 3 tanks
+  右二: 160 points 650..2240 mm
+  右一: 162 points 633..2243 mm
+  左一: 162 points 630..2240 mm
+warnings=0
+
+=== Calculator smoke test ===
+calculator=PASS result=285.867

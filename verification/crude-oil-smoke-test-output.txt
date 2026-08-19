@@ -1,0 +1,14 @@
+CrudeOilCalculatorSmokeTest
+average=25.00
+gauge=1010.000
+withoutSteel=982.900
+withSteel=983.077
+massWithSteel=834.534
+density-unit-equivalence=PASS
+
+CrudeOilXlsxSmokeTest
+xlsx zip integrity=PASS
+sheet=原油计算
+range=A1:L26
+row26 merges=A26:C26,D26:F26,G26:I26,J26:L26
+formula cells=F6,K6,H23,L23,F24,K24,F25,K25,D26,J26

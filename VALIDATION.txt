@@ -1,0 +1,24 @@
+最新版本说明：本工程已升级至 v1.2.0；本文件以下内容为 v1.1.1 历史验证记录。
+请优先查看 VALIDATION_v1.2.0.txt。
+
+工程生成与验证结果（1.1.1）
+
+本次功能检查：
+- 管线量、水体积、OBQ、商检量均使用可选数字读取逻辑，留空返回 BigDecimal.ZERO。
+- 计算完成后直接进入结果页，不再把 XLSX 成功作为进入结果页的前置条件。
+- PDF、Excel/XLSX、纯文本三种输出入口相互独立。
+- PDF 使用 Android 原生 PdfDocument，不增加第三方依赖。
+- XLSX XML 特性设置改为 safeSetFeature 兼容模式，避免不支持 disallow-doctype-decl 的设备直接失败。
+- 文件 Provider 已按扩展名支持 PDF、XLSX、TXT、PNG、JPG MIME 类型。
+- App 版本：1.1.1，versionCode 3。
+- Windows 非 ASCII 路径兼容开关已写入 gradle.properties。
+
+已执行的开发检查：
+- 原油计算器、XLSX 模板写入器、纯文本格式化器的 JVM 编译与烟雾测试通过。
+- CrudeOilActivity 使用 Android API 形状桩进行 Kotlin 类型检查通过。
+- CrudeOilPdfExporter 使用 Android API 形状桩进行 Kotlin 类型检查通过。
+- 示例 XLSX ZIP 完整性检查通过。
+
+环境限制：
+- 当前交付环境没有 Android SDK，因此未执行完整 assembleDebug。
+- 请在 Android Studio 中完成 Gradle Sync、Build，并在出现过 XML 报错的真机上复测 Excel 输出。

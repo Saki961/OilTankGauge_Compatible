@@ -1,0 +1,52 @@
+原油舱容检尺 App——Android Studio 导入说明
+
+一、不要继续使用刚才一直加载的旧工程目录
+1. 点击 Android Studio “Processes” 窗口右侧的 ×，取消导入。
+2. 关闭该项目。
+3. 解压本兼容版 ZIP 到一个简短的纯英文路径，例如：
+   D:\AndroidProjects\OilTankGauge_Compatible
+
+二、打开正确目录
+在 Android Studio 选择 File > Open，
+打开包含以下文件的 OilTankGauge_Compatible 文件夹：
+- settings.gradle.kts
+- build.gradle.kts
+- gradlew.bat
+- app 文件夹
+
+不要直接打开 ZIP，也不要只打开 app 子文件夹。
+
+三、设置 Gradle JDK
+进入：
+File > Settings > Build, Execution, Deployment > Build Tools > Gradle
+
+将 Gradle JDK 设置为：
+Embedded JDK / jbr-17 / Java 17
+
+不要选 Java 8、11、21 或 25。
+
+四、首次同步
+确认 Gradle 的 Offline work（离线模式）没有勾选，然后点击：
+File > Sync Project with Gradle Files
+
+本兼容版使用：
+- Android Gradle Plugin 8.2.2
+- Gradle 8.2.1
+- Kotlin 1.9.22
+- compileSdk / targetSdk 34
+- 国内镜像优先
+
+首次同步仍需下载 Gradle 和 Android 构建组件，但应能显示下载进度并在正常网络下完成。
+
+五、仍然卡住时
+在 Android Studio 底部打开 Terminal，运行：
+
+Windows：
+gradlew.bat --version
+
+macOS / Linux：
+./gradlew --version
+
+正常情况会输出 Gradle 8.2.1。
+若终端停留在 Downloading 或报网络错误，说明是网络/代理问题，而不是 App 代码问题。
+请把 Terminal 或 Build 窗口中的完整错误截图发回。
